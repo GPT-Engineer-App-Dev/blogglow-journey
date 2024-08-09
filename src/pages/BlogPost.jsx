@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const blogPosts = [
   { id: 1, title: 'My First Blog Post', content: 'This is the content of my first blog post. It\'s been an exciting journey starting this blog, and I can\'t wait to share more of my thoughts and experiences with you all.', date: '2023-04-01' },
@@ -15,9 +16,12 @@ const BlogPost = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
-      <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
-        <Link to="/" className="text-blue-500 hover:underline mb-4 block">&larr; Back to all posts</Link>
+    <div className="min-h-screen bg-background text-foreground py-8">
+      <div className="max-w-2xl mx-auto bg-card p-8 rounded-lg shadow-md">
+        <div className="flex justify-between items-center mb-4">
+          <Link to="/" className="text-blue-500 hover:underline">&larr; Back to all posts</Link>
+          <ThemeToggle />
+        </div>
         <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
         <p className="text-gray-600 mb-4">{post.date}</p>
         <p className="mb-4">{post.content}</p>

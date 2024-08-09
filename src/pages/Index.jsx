@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const blogPosts = [
   { id: 1, title: 'My First Blog Post', content: 'This is the content of my first blog post...', date: '2023-04-01' },
@@ -15,9 +16,12 @@ const Index = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
+    <div className="min-h-screen bg-background text-foreground py-8">
       <div className="max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-8 text-center">My Personal Blog</h1>
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-4xl font-bold">My Personal Blog</h1>
+          <ThemeToggle />
+        </div>
         <input
           type="text"
           placeholder="Search posts..."
